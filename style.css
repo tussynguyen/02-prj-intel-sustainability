@@ -7,12 +7,11 @@
   overflow-x: auto; /* Enable horizontal scrolling */
   gap: 16px; /* Space between cards */
   padding: 16px 0;
-  width: 100%;
-  max-width: 1080px; /* 4 cards * 250px + 3 gaps * 16px = 1080px */
-  margin: 0 auto 24px auto; /* Add bottom margin so the scrollbar is visible and not covered */
+  width: 1200px;      /* Show only 4 cards at a time (4*250px + 3*16px gap) */
+  max-width: 2000px;  /* Prevent more than 4 cards from showing at once */
+  margin: 0 auto 24px auto; /* Center the container horizontally */
   /* Smooth scrolling for a better experience */
   scroll-behavior: smooth;
-  /* Hide vertical overflow just in case */
   overflow-y: hidden;
   scroll-snap-type: x mandatory; /* Enable horizontal scroll snap for smooth navigation */
   /* Hide scrollbar for all browsers */
@@ -143,50 +142,108 @@
   }
 }
 
-/* Add a gradient blue background to the hero/header section */
+/* Style the Hero Section (header) for Intel branding */
 header {
-  background: linear-gradient(135deg, #2196f3 0%, #21cbf3 100%); /* Blue gradient background */
-  color: white; /* Make text white for better contrast */
-  padding: 32px 0; /* Add some space above and below */
-  text-align: center; /* Center the writing in the header */
-  border-radius: 0 0 16px 16px; /* Optional: round bottom corners */
-  display: flex; /* Use Flexbox to center content */
-  flex-direction: column; /* Stack items vertically */
-  align-items: center;    /* Center items horizontally */
-  justify-content: center;/* Center items vertically */
+  background: linear-gradient(135deg, #2196f3 0%, #21cbf3 100%); /* Blue gradient background for hero section */
+  /*background: #2196f3; /* Solid Intel blue background */
+  padding: 25vh 0 32px 0; /* Add more vertical space so the logo and text are visible */
+  text-align: center;   /* Center all text and inline elements */
+  height: auto;         /* Let the header grow with content */
+  position: relative;   /* For positioning child elements */
+  margin: 0 auto;
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Start at the top for logo */
 }
 
-/* Make sure the logo looks good on the background */
+/* Center the Intel logo image in the header */
 header img {
-  width: 120px;
-  margin-bottom: 16px;
+  display: block;           /* Make the image a block element */
+  margin: 0 auto 24px auto; /* Center the image horizontally and add space below */
+  width: 120px;             /* Set a good size for the logo */
+  max-width: 90vw;          /* Make sure it fits on small screens */
+  height: auto;             /* Keep the aspect ratio */
+  background: transparent;  /* No background behind the image itself */
 }
 
-/* Style the footer so it is centered and spaced from the timeline */
+/*
+  Explanation for students:
+  - The header uses a blue gradient background.
+  - The Intel logo image is centered at the top of the page.
+  - margin: 0 auto centers the image horizontally.
+  - width sets the size of the logo.
+  - max-width: 90vw makes sure the logo doesn't overflow on small screens.
+*/
+
+/* Main headline styling */
+header h1 {
+  font-size: 2.2em;       /* Large, bold headline */
+  font-weight: bold;
+  margin: 0 0 12px 0;     /* Space below headline */
+  letter-spacing: 1px;
+  color: #fff;            /* White for contrast */
+  text-shadow: 0 2px 8px rgba(33,150,243,0.18); /* Subtle blue shadow */
+}
+
+/* Subheading/description styling */
+header p {
+  font-size: 1.15em;      /* Slightly larger text */
+  max-width: 600px;       /* Limit width for readability */
+  margin: 0 auto;         /* Center the paragraph */
+  color: #e3f2fd;         /* Lighter blue for softer contrast */
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+/* Center all text and content in the footer and add spacing */
 footer {
-  text-align: center; /* Center the writing in the footer */
-  margin: 32px 0 0 0; /* Add space above the footer */
-  padding-bottom: 10px; /* Add space at the bottom */
+  text-align: center;      /* Center all text in the footer */
+  margin: 0 auto;          /* Center the footer block if width is set */
+  padding: 20px 0 10px 0;  /* Add more space above and below */
+  margin: 32px 0 0 0;      /* Add space above the footer */
   font-family: 'Segoe UI', Arial, sans-serif;
-  color: #1976d2; /* Intel blue */
-  background: none; /* No background so it doesn't cover content */
+  color: #1976d2;          /* Intel blue */
+  background: none;        /* No background so it doesn't cover content */
   display: flex;           /* Use Flexbox to center content */
   flex-direction: column;  /* Stack items vertically */
   align-items: center;     /* Center items horizontally */
   justify-content: center; /* Center items vertically */
+  width: 100%;             /* Make footer span the full width */
+  max-width: 100vw;        /* Prevent overflow */
+  box-sizing: border-box;  /* Include padding in width */
 }
 
-/* 
+/* Hero logo styling for the header */
+.hero-logo {
+  display: block;           /* Make the image a block element */
+  margin: 0 auto 24px auto; /* Center the logo and add space below */
+  width: 120px;             /* Set a good size for the hero image */
+  max-width: 90vw;          /* Make sure it fits on small screens */
+  height: auto;             /* Keep the aspect ratio */
+}
+
+/*
   Explanation for students:
-  - max-width on .timeline-cards makes sure only 4 cards are visible at a time on large screens.
-  - overflow-x: auto lets you scroll left and right to see more cards.
+  - The .hero-logo class centers the Intel logo at the top of the page.
+  - margin: 0 auto centers the image horizontally.
+  - width sets the size of the logo.
+  - max-width: 90vw makes sure the logo doesn't overflow on small screens.
+*/
+/*
+  Explanation for students:
+  - width and max-width set to 1080px so only 4 cards are visible at a time.
+  - margin: 0 auto centers the timeline-cards container on the page.
+  - overflow-x: auto lets you scroll to see more cards.
+  - No cards are cut off; you can scroll to see the rest.
   - On smaller screens, the layout changes to show fewer cards or stack them vertically.
   - .timeline-cards uses flexbox to arrange cards in a row (horizontal) or column (vertical on small screens).
   - overflow-x: auto lets you scroll left and right to see more cards on large screens.
   - .timeline-card sets the size, font, and style for each card.
   - :hover adds a simple effect and shows more details when you move your mouse over a card.
   - Media queries (@media) help make the layout responsive for different screen sizes.
-  - The footer is centered and spaced away from the timeline cards.
+  - The footer is centered and spaced away from the timeline.
   - margin and padding make sure the footer does not cover any content.
   - .card-overlay is a special box that covers the card and shows the details when you hover.
   - It uses position: absolute to sit on top of the card.
@@ -216,4 +273,22 @@ footer {
   - flex-direction: column stacks the content vertically.
   - text-align: center makes sure all the writing in the header and footer is centered.
   - background: linear-gradient gives the header a blue gradient background.
-*/
+  - position: relative and z-index: 1 make sure the header image appears above the background.
+  - Check that the image path (src="img/intel-header-logo.svg") is correct.
+  - z-index: 2 and position: relative make sure the logo is in front of the background.
+  - background: none removes any background-image that could hide the logo.
+  - display: block makes sure the image is shown as a block element.
+  /*- margin: 0 auto centers the image horizontally.
+  /*- width: 100px sets the size of the logo.
+  /*- max-width: 90vw makes sure the logo doesn't overflow on small screens.
+  /*- height: auto keeps the aspect ratio of the logo.
+  /*- background: transparent makes sure there is no background behind the image.
+  /*- display: flex makes the footer a flex container.
+  /*- flex-direction: column stacks the items vertically.
+  /*- align-items: center centers the items horizontally.
+  /*- justify-content: center centers the items vertically.
+  /*- width: 100% makes the footer span the full width of the page.
+  /*- max-width: 100vw prevents overflow on small screens.
+  /*- box-sizing: border-box makes sure padding is included in the width.
+  /*- padding: 20px 0 10px 0 adds space above and below the footer.
+  /*- margin: 32px 0 0 0 adds space above the footer.      
