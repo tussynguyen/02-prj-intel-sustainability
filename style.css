@@ -127,7 +127,7 @@
   }
 }
 
-/* Responsive: Stack cards vertically on small screens */
+/* Responsive: Stack cards vertically and adjust header/logo on small screens */
 @media (max-width: 700px) {
   .timeline-cards {
     flex-direction: column; /* Stack cards vertically */
@@ -140,7 +140,22 @@
     min-width: 90vw;
     max-width: 95vw;
   }
+  header img {
+    width: 80px;        /* Make logo smaller on small screens */
+    margin-bottom: 16px;
+  }
+  header {
+    padding: 10vh 0 24px 0; /* Less vertical space on small screens */
+  }
 }
+
+/*
+  Explanation for students:
+  - @media rules help your page look good on phones, tablets, and computers.
+  - The timeline cards stack vertically on small screens.
+  - The header and logo get smaller on small screens so everything fits.
+  - Use your browser's DevTools (press F12 or right-click and choose "Inspect") and try resizing the window to see these changes in action!
+*/
 
 /* Style the Hero Section (header) for Intel branding */
 header {
@@ -152,29 +167,28 @@ header {
   position: relative;   /* For positioning child elements */
   margin: 0 auto;
   border-radius: 0 0 16px 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; /* Start at the top for logo */
+  display: flex;              /* Use Flexbox for layout */
+  flex-direction: column;     /* Stack items vertically */
+  align-items: center;        /* Center items horizontally */
+  justify-content: flex-start;/* Start items at the top */
 }
 
-/* Center the Intel logo image in the header */
+/* Center the Intel logo image in the header using flexbox */
 header img {
-  display: block;           /* Make the image a block element */
-  margin: 0 auto 24px auto; /* Center the image horizontally and add space below */
-  width: 120px;             /* Set a good size for the logo */
-  max-width: 90vw;          /* Make sure it fits on small screens */
-  height: auto;             /* Keep the aspect ratio */
-  background: transparent;  /* No background behind the image itself */
+  display: block;             /* Make the image a block element */
+  margin: 0 auto 24px auto;   /* Center the image horizontally and add space below */
+  width: 120px;               /* Set a good size for the logo */
+  max-width: 90vw;            /* Make sure it fits on small screens */
+  height: auto;               /* Keep the aspect ratio */
+  background: transparent;    /* No background behind the image itself */
+  /* No absolute positioning, so it works with flexbox centering */
 }
 
 /*
   Explanation for students:
-  - The header uses a blue gradient background.
-  - The Intel logo image is centered at the top of the page.
-  - margin: 0 auto centers the image horizontally.
-  - width sets the size of the logo.
-  - max-width: 90vw makes sure the logo doesn't overflow on small screens.
+  - header uses Flexbox to center all content, including the Intel logo.
+  - header img uses margin: 0 auto to center the logo horizontally.
+  - width and max-width make sure the logo looks good on all screens.
 */
 
 /* Main headline styling */
@@ -291,4 +305,4 @@ footer {
   /*- max-width: 100vw prevents overflow on small screens.
   /*- box-sizing: border-box makes sure padding is included in the width.
   /*- padding: 20px 0 10px 0 adds space above and below the footer.
-  /*- margin: 32px 0 0 0 adds space above the footer.      
+  /*- margin: 32px 0 0 0 adds space above the footer.
