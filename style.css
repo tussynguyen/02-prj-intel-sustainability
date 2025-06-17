@@ -86,28 +86,28 @@ body {
   z-index: 2;
   align-items: center;
   justify-content: center;
-  pointer-events: none;
+  pointer-events: none; /* Prevent interaction when hidden */
   opacity: 0; /* Hide overlay by default */
   transition: opacity 0.7s ease-in-out; /* Smooth transition for opacity */
 }
 
 /* Show the overlay and description on hover */
 .timeline-card:hover .card-overlay {
-  opacity: 1;
+  opacity: 1;           /* Show the overlay */
   pointer-events: auto; /* Allow interaction with the overlay */
 }
 
 /* Hide the paragraph in normal flow (so it only shows in overlay) */
 .timeline-card p {
-  display: block;
-  color: #fff; /* Make sure text is white */
-  margin: 0;
-  opacity: 1;
+  display: none; /* Hide the description in the card by default */
 }
 
-/* Prevent the card from showing the old paragraph on hover */
-.timeline-card:hover p {
-  display: none;
+/* Show the paragraph only inside the overlay when hovering */
+.timeline-card:hover .card-overlay p {
+  display: block; /* Show the description text in the overlay */
+  color: #fff;    /* Make sure text is white */
+  margin: 0;
+  opacity: 1;
 }
 
 /* Hover effect for cards */
@@ -272,6 +272,19 @@ footer {
   - The min-height and max-height make the card taller
   - The description text (inside <p>) is hidden by default.
   - When you hover over a timeline card, the description fades in and becomes visible.
+  - This makes the timeline interactive and easy to read.
+  - .card-overlay is hidden by default and appears when you hover over a card.
+  - The overlay uses a blue background and white text for the description.
+  - This makes the description easy to read and interactive.
+  - On large screens, .timeline-cards uses Flexbox to arrange cards in a row and lets you scroll left and right.
+  - On small screens (700px or less), .timeline-cards switches to a column layout so cards stack vertically.
+  - Flexbox makes it easy to change the direction of the cards for different screen sizes.
+  - overflow-x: auto adds a scrollbar at the bottom for horizontal scrolling on large screens.
+  - gap adds space between each card.
+  - align-items: center centers the cards when stacked vertically.
+  - scroll-snap-type: x mandatory on .timeline-cards makes the timeline "snap" to each card as you scroll horizontally.
+  - scroll-snap-align: start on .timeline-card tells the browser to align the start of each card with the start of the container.
+  - This makes scrolling smoother and helps you focus on one card at a time.
   - This makes the timeline interactive and easy to read.
   - .card-overlay is hidden by default and appears when you hover over a card.
   - The overlay uses a blue background and white text for the description.
