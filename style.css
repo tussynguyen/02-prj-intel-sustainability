@@ -1,5 +1,7 @@
 /* Add your CSS here */
-
+body {
+  font-family: 'Inter', 'Geist-Mono', sans-serif !important;
+}
 /* Timeline cards container styles */
 .timeline-cards {
   display: flex; /* Use Flexbox to arrange cards */
@@ -93,7 +95,7 @@
 .timeline-card:hover .card-overlay {
   opacity: 1;
   pointer-events: auto; /* Allow interaction with the overlay */
- 
+}
 
 /* Hide the paragraph in normal flow (so it only shows in overlay) */
 .timeline-card p {
@@ -292,17 +294,17 @@ footer {
   - z-index: 2 and position: relative make sure the logo is in front of the background.
   - background: none removes any background-image that could hide the logo.
   - display: block makes sure the image is shown as a block element.
-  /*- margin: 0 auto centers the image horizontally.
-  /*- width: 100px sets the size of the logo.
-  /*- max-width: 90vw makes sure the logo doesn't overflow on small screens.
-  /*- height: auto keeps the aspect ratio of the logo.
-  /*- background: transparent makes sure there is no background behind the image.
-  /*- display: flex makes the footer a flex container.
-  /*- flex-direction: column stacks the items vertically.
-  /*- align-items: center centers the items horizontally.
-  /*- justify-content: center centers the items vertically.
-  /*- width: 100% makes the footer span the full width of the page.
-  /*- max-width: 100vw prevents overflow on small screens.
-  /*- box-sizing: border-box makes sure padding is included in the width.
-  /*- padding: 20px 0 10px 0 adds space above and below the footer.
-  /*- margin: 32px 0 0 0 adds space above the footer.
+  - margin: 0 auto centers the image horizontally.
+  - width: 100px sets the size of the logo.
+  - max-width: 90vw makes sure the logo doesn't overflow on small screens.
+  - height: auto keeps the aspect ratio of the logo.
+  - background: transparent makes sure there is no background behind the image.
+  - display: flex makes the footer a flex container.
+  - flex-direction: column stacks the items vertically.
+  - align-items: center centers the items horizontally.
+  - justify-content: center centers the items vertically.
+  - width: 100% makes the footer span the full width of the page.
+  - max-width: 100vw prevents overflow on small screens.
+  - box-sizing: border-box makes sure padding is included in the width.
+  - padding: 20px 0 10px 0 adds space above and below the footer.
+  - margin: 32px 0 0 0 adds space above the footer. */
